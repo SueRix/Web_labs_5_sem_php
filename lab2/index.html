@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>File Upload</title>
+    <style>
+        /* Стилі для форми завантаження файлу і введення тексту */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+            box-sizing: border-box;
+        }
+        input[type="file"], input[type="text"] {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: calc(100% - 20px); /* Поле буде займати 100% ширини форми, мінус відступи */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Форма для завантаження файлу -->
+    <form method="post" action="process.php" enctype="multipart/form-data">
+        <label for="file">Завантажити файл:</label>
+        <input type="file" name="file" id="file" required><br>
+        <input type="submit" value="Завантажити">
+    </form>
+    <!-- Форма для введення тексту -->
+    <form method="post" action="text.php">
+        <label for="text">Введіть текст:</label>
+        <input type="text" name="text" id="text" required><br>
+        <input type="submit" value="Зберегти текст">
+    </form>
+</body>
+</html>
